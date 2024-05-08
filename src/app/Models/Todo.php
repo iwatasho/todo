@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Todo extends Model
 {
-    use HasFactory;
+  use HasFactory;
+
+  protected $fillable = ['category_id','content'];
+
+  public function category()
+  {
+    return $this->belonsTo(Category:class);
+  }
 }
